@@ -33,5 +33,14 @@ namespace Grau_James_991443203_Assignment_2.Properties {
                 return ((string)(this["MegaBooksDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Trafalgar Book Club")]
+        public string ApplicationName {
+            get {
+                return ((string)(this["ApplicationName"]));
+            }
+        }
     }
 }

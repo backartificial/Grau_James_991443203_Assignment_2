@@ -68,17 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs" />
-    <Compile Include="frmAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAdd.Designer.cs">
-      <DependentUpon>frmAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmBooks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBooks.Designer.cs">
       <DependentUpon>frmBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MegaBooksDBDataSet.cs">
+      <DependentUpon>MegaBooksDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="MegaBooksDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -87,9 +84,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAdd.resx">
-      <DependentUpon>frmAdd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmBooks.resx">
       <DependentUpon>frmBooks.cs</DependentUpon>
     </EmbeddedResource>

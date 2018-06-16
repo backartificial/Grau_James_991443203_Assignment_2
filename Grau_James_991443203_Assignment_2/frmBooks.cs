@@ -1,59 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grau_James_991443203_Assignment_2 {
     public partial class frmBooks : Form {
-        private static SqlConnection conn = new SqlConnection(Properties.Settings.Default.MegaBooksDBConnectionString);
-        private SqlDataAdapter apt = new SqlDataAdapter("SELECT * FROM books", conn);
-
         public frmBooks() {
             InitializeComponent();
         }
 
+        private void booksBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
+            Validate();
+            booksBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(megaBooksDBDataSet);
+        }
+
         private void frmBooks_Load(object sender, EventArgs e) {
-            DataTable dt = new DataTable();
-            apt.Fill(dt);
-            dgvBooks.DataSource = dt;
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dgvBooks.DataSource;
-
-            bngBooks.BindingSource = bs;
+            // TODO: This line of code loads data into the 'megaBooksDBDataSet.Books' table. You can move, or remove it, as needed.
+            booksTableAdapter.Fill(this.megaBooksDBDataSet.Books);
         }
 
-        /**
-         * 
-         * This method is used for providing the click event to refresh database data to the datagridview
-         * 
-         **/
-        private void tsbRefresh_Click(object sender, EventArgs e) {
-            // Set the data source to null for the datagridview datasource
-            dgvBooks.DataSource = null;
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e) {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the selected book?", "Delete Book Record?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
 
-            // Perform Update and refresh on data table
-            dgvBooks.Update();
-            dgvBooks.Refresh();
-            dgvBooks.Parent.Refresh();
+            if(dialogResult == DialogResult.Yes) {
+                using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.MegaBooksDBConnectionString)) { 
+                    conn.Open();
 
-            // Initialize a new datatable
-            DataTable dt = new DataTable();
-            
-            // Fill data table with the database items
-            apt.Fill(dt);
+                    using (SqlCommand command = new SqlCommand("DELETE FROM books WHERE id = @id", conn)) {
+                        // delete item from database
+                        command.Parameters.AddWithValue("@id", dgvBooks.CurrentRow.Cells[0].Value);
+                        command.ExecuteNonQuery();
 
-            // Set the datagridview datasource to the datatable
-            dgvBooks.DataSource = dt;
-        }
+                        // delete item from datasource and update DGV
+                        megaBooksDBDataSet.Books.Rows.RemoveAt(dgvBooks.CurrentCell.RowIndex);
+                    }
+                }
 
-        /**
-         * 
-         * This method is used for providing the click event to add a new book
-         * 
-         **/
-        private void bsnAdd_Click(object sender, EventArgs e) {
-            // Display the new book form passing inthe current form for access to the datagridview
-            new frmAdd(this).Show();
+            }
         }
     }
 }

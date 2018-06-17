@@ -85,14 +85,8 @@ namespace Grau_James_991443203_Assignment_2 {
          * 
          **/ 
         private void tsbEdit_Click(object sender, EventArgs e) {
-            // Select the curret row and store it into a variable
-            DataGridViewRow selectedBook = dgvBooks.CurrentRow;
-            
-            // Based on the selected row, create a new Book instance
-            Book editBook = new Book(int.Parse(selectedBook.Cells[0].Value.ToString()), selectedBook.Cells[1].Value.ToString(), selectedBook.Cells[2].Value.ToString(), DateTime.Parse(selectedBook.Cells[3].Value.ToString()), selectedBook.Cells[4].Value.ToString());
-
-            // Display the edit form and pass in the desires book to edit and this form
-            new frmBookEdit(editBook, this).Show();
+            // Call the edit book function
+            editBook();
         }
 
         /**
@@ -103,6 +97,32 @@ namespace Grau_James_991443203_Assignment_2 {
         private void bngAdd_Click(object sender, EventArgs e) {
             // Display the add form and pass in this form
             new frmBookAdd(this).Show();
+        }
+
+        /**
+         * 
+         * This method is used to handle a table cell double click
+         * 
+         **/
+        private void dgvBooks_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
+            // Call the edit book function
+            editBook();
+        }
+
+        /**
+         * 
+         * This method is used perform the pre-editing function
+         * 
+         **/
+        private void editBook() {
+            // Select the curret row and store it into a variable
+            DataGridViewRow selectedBook = dgvBooks.CurrentRow;
+
+            // Based on the selected row, create a new Book instance
+            Book editBook = new Book(int.Parse(selectedBook.Cells[0].Value.ToString()), selectedBook.Cells[1].Value.ToString(), selectedBook.Cells[2].Value.ToString(), DateTime.Parse(selectedBook.Cells[3].Value.ToString()), selectedBook.Cells[4].Value.ToString());
+
+            // Display the edit form and pass in the desires book to edit and this form
+            new frmBookEdit(editBook, this).Show();
         }
     }
 }

@@ -92,6 +92,12 @@
     <Compile Include="frmReviewAdd.Designer.cs">
       <DependentUpon>frmReviewAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReviewEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReviewEdit.Designer.cs">
+      <DependentUpon>frmReviewEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReviews.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Review.cs" />
     <EmbeddedResource Include="frmBookAdd.resx">
       <DependentUpon>frmBookAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReviewAdd.resx">
       <DependentUpon>frmReviewAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReviewEdit.resx">
+      <DependentUpon>frmReviewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReviews.resx">
       <DependentUpon>frmReviews.cs</DependentUpon>

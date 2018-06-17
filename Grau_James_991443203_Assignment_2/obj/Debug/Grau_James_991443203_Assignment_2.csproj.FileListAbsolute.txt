@@ -12,3 +12,4 @@ C:\Users\james\source\repos\Assignments\Grau_James_991443203_Assignment_2\Grau_J
 C:\Users\james\source\repos\Assignments\Grau_James_991443203_Assignment_2\Grau_James_991443203_Assignment_2\obj\Debug\Grau_James_991443203_Assignment_2.frmBookEdit.resources
 C:\Users\james\source\repos\Assignments\Grau_James_991443203_Assignment_2\Grau_James_991443203_Assignment_2\obj\Debug\Grau_James_991443203_Assignment_2.frmReviewAdd.resources
 C:\Users\james\source\repos\Assignments\Grau_James_991443203_Assignment_2\Grau_James_991443203_Assignment_2\obj\Debug\Grau_James_991443203_Assignment_2.frmReviews.resources
+C:\Users\james\source\repos\Assignments\Grau_James_991443203_Assignment_2\Grau_James_991443203_Assignment_2\obj\Debug\Grau_James_991443203_Assignment_2.frmReviewEdit.resources

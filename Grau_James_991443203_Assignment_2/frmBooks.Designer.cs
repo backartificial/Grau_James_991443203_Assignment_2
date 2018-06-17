@@ -241,6 +241,7 @@
             this.dgvBooks.ReadOnly = true;
             this.dgvBooks.Size = new System.Drawing.Size(800, 397);
             this.dgvBooks.TabIndex = 1;
+            this.dgvBooks.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBooks_CellMouseDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

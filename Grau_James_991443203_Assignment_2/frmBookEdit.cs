@@ -1,6 +1,6 @@
 ﻿/**
  * 
- * File: frmEdit.cs
+ * File: frmBookEdit.cs
  * Date: June 16, 2018
  * Name: James Grau
  * Student Id: 991443203
@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 // Declare Namespace 
 namespace Grau_James_991443203_Assignment_2 {
-    // Class to handle frmEdit
+    // Class to handle frmBookEdit
     public partial class frmBookEdit : Form {
         // Create needed class variables
         private Book editBook;

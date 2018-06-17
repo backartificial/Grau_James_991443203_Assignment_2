@@ -137,11 +137,11 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnUpdate.Location = new System.Drawing.Point(326, 216);
+            this.btnUpdate.Location = new System.Drawing.Point(339, 216);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(81, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(68, 36);
             this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Save";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -159,7 +159,7 @@
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnCancel.Location = new System.Drawing.Point(239, 216);
+            this.btnCancel.Location = new System.Drawing.Point(252, 216);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(81, 36);
             this.btnCancel.TabIndex = 6;

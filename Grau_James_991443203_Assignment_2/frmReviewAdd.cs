@@ -1,9 +1,21 @@
-﻿using System;
+﻿/**
+ * 
+ * File: frmReviewAdd.cs
+ * Date: June 17, 2018
+ * Name: James Grau
+ * Student Id: 991443203
+ * 
+ **/
+
+// Include needed packages
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+// Declare Namespace 
 namespace Grau_James_991443203_Assignment_2 {
+    // Class to handle frmReviewAdd
     public partial class frmReviewAdd : Form {
         // Create needed class variables
         private frmReviews reviewsForm;

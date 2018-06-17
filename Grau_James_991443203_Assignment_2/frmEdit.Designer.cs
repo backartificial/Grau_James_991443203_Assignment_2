@@ -34,7 +34,7 @@
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.mtbISBN = new System.Windows.Forms.MaskedTextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -134,16 +134,16 @@
             this.mtbISBN.Size = new System.Drawing.Size(280, 26);
             this.mtbISBN.TabIndex = 4;
             // 
-            // btnSave
+            // btnUpdate
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSave.Location = new System.Drawing.Point(326, 216);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 36);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnUpdate.Location = new System.Drawing.Point(326, 216);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(81, 36);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblTitle
             // 
@@ -169,14 +169,14 @@
             // 
             // frmEdit
             // 
-            this.AcceptButton = this.btnSave;
+            this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(416, 260);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.mtbISBN);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.txtAuthor);
@@ -211,7 +211,7 @@
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.MaskedTextBox mtbISBN;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnCancel;
     }

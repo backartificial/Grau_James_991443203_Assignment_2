@@ -10,7 +10,7 @@ namespace Grau_James_991443203_Assignment_2 {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBooks());
+            Application.Run(new frmReviews());
         }
     }
 }

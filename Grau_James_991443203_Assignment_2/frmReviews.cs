@@ -8,13 +8,11 @@ namespace Grau_James_991443203_Assignment_2 {
             InitializeComponent();
         }
 
-        private void reviewsBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
-            this.Validate();
-            this.reviewsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.megaBooksDBDataSet);
-
-        }
-
+        /**
+         * 
+         * This method is called when the form is loading to initialize components
+         * 
+         **/
         private void frmReviews_Load(object sender, EventArgs e) {
             // Dynamically set the form title
             Text = "Reviews | " + Properties.Settings.Default.ApplicationName;
@@ -62,6 +60,16 @@ namespace Grau_James_991443203_Assignment_2 {
                     }
                 }
             }
+        }
+
+        /**
+         * 
+         * This method is used to handle the click event of adding a new review
+         * 
+         **/
+        private void bngReviewAdd_Click(object sender, EventArgs e) {
+            // Open the form to add a new review and pass in this form
+            new frmReviewAdd(this).Show();
         }
     }
 }

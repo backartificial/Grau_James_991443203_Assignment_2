@@ -190,7 +190,7 @@ namespace Grau_James_991443203_Assignment_2 {
                 // Open the connection to the database
                 conn.Open();
 
-                // Perform the insert of the book into the database
+                // Perform the retrival of the next id
                 using (SqlCommand command = new SqlCommand("SELECT TOP(1) IDENT_CURRENT('Books') + IDENT_INCR('Books') AS 'nextId' FROM Books", conn)) {
                     // Try using the SqlDataReader to read the next id
                     using (SqlDataReader reader = command.ExecuteReader()) {

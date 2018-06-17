@@ -68,17 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Book.cs" />
-    <Compile Include="frmAdd.cs">
+    <Compile Include="frmBookAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdd.Designer.cs">
-      <DependentUpon>frmAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAddReview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddReview.Designer.cs">
-      <DependentUpon>frmAddReview.cs</DependentUpon>
+    <Compile Include="frmBookAdd.Designer.cs">
+      <DependentUpon>frmBookAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBooks.cs">
       <SubType>Form</SubType>
@@ -92,6 +86,18 @@
     <Compile Include="frmBookEdit.Designer.cs">
       <DependentUpon>frmBookEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReviewAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReviewAdd.Designer.cs">
+      <DependentUpon>frmReviewAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReviews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReviews.Designer.cs">
+      <DependentUpon>frmReviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="MegaBooksDBDataSet.cs">
       <DependentUpon>MegaBooksDBDataSet.xsd</DependentUpon>
     </Compile>
@@ -102,14 +108,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAdd.resx">
-      <DependentUpon>frmAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmBookAdd.resx">
+      <DependentUpon>frmBookAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBooks.resx">
       <DependentUpon>frmBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBookEdit.resx">
       <DependentUpon>frmBookEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReviewAdd.resx">
+      <DependentUpon>frmReviewAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReviews.resx">
+      <DependentUpon>frmReviews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

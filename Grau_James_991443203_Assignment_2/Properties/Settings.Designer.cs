@@ -42,5 +42,17 @@ namespace Grau_James_991443203_Assignment_2.Properties {
                 return ((string)(this["ApplicationName"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public short ReviewsAdded {
+            get {
+                return ((short)(this["ReviewsAdded"]));
+            }
+            set {
+                this["ReviewsAdded"] = value;
+            }
+        }
     }
 }

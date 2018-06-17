@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grau_James_991443203_Assignment_2 {
@@ -15,16 +8,16 @@ namespace Grau_James_991443203_Assignment_2 {
             InitializeComponent();
         }
 
+        private void frmBooks_Load(object sender, EventArgs e) {
+            // TODO: This line of code loads data into the 'megaBooksDBDataSet.Books' table. You can move, or remove it, as needed.
+            booksTableAdapter.Fill(megaBooksDBDataSet.Books);
+        }
+
         private void booksBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
             Validate();
             booksBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(megaBooksDBDataSet);
-        }
-
-        private void frmBooks_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'megaBooksDBDataSet.Books' table. You can move, or remove it, as needed.
-            booksTableAdapter.Fill(this.megaBooksDBDataSet.Books);
-        }
+        }        
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e) {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the selected book?", "Delete Book Record?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
@@ -42,8 +35,14 @@ namespace Grau_James_991443203_Assignment_2 {
                         megaBooksDBDataSet.Books.Rows.RemoveAt(dgvBooks.CurrentCell.RowIndex);
                     }
                 }
-
             }
+        }
+
+        private void tsbEdit_Click(object sender, EventArgs e) {
+            var selectedBook = dgvBooks.CurrentRow;
+            Book editBook = new Book(int.Parse(selectedBook.Cells[0].Value.ToString()), selectedBook.Cells[1].Value.ToString(), selectedBook.Cells[2].Value.ToString(), DateTime.Parse(selectedBook.Cells[3].Value.ToString()), selectedBook.Cells[4].Value.ToString());
+
+            new frmEdit(editBook, this).Show();
         }
     }
 }

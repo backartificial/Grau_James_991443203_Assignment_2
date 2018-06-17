@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Grau_James_991443203_Assignment_2 {
-    class Book {
+    public class Book {
         public int id { get; }
         public string name { get; }
         public string author { get; }

@@ -191,7 +191,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBookEdit";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmEdit_Load);
             this.ResumeLayout(false);

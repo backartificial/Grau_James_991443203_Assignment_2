@@ -122,9 +122,9 @@ namespace Grau_James_991443203_Assignment_2 {
          **/
         private Boolean checkValidInput() {
             // Check if the input values are empty
-            if (string.IsNullOrWhiteSpace(txtRating.Text) || trbRating.Value == 0 || string.IsNullOrWhiteSpace(txtReviewer.Text) || string.IsNullOrWhiteSpace(dtpReviewDate.ToString()) || string.IsNullOrWhiteSpace(rtbReview.Text)) {
+            if (string.IsNullOrWhiteSpace(txtRating.Text) || string.IsNullOrWhiteSpace(txtReviewer.Text) || string.IsNullOrWhiteSpace(dtpReviewDate.ToString()) || string.IsNullOrWhiteSpace(rtbReview.Text)) {
                 // Display error message
-                MessageBox.Show("Oops.. Some values are not filled out.  All fields must be filled out before adding a new review.  Please fill out the fields and try again!", "Empty Input Values", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Oops.. Some values are not filled out.  All fields (except rating) must be filled out before adding a new review.  Please fill out the fields and try again!", "Empty Input Values", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 // Return false on error
                 return false;

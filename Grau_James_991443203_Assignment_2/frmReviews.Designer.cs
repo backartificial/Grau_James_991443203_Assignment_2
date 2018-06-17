@@ -330,7 +330,7 @@
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "rating";
             dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.NullValue = "No Rating Provided";
             this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn5.HeaderText = "Book Rating";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";

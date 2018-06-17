@@ -212,11 +212,9 @@
             // 
             this.trbRating.LargeChange = 1;
             this.trbRating.Location = new System.Drawing.Point(156, 155);
-            this.trbRating.Minimum = 1;
             this.trbRating.Name = "trbRating";
             this.trbRating.Size = new System.Drawing.Size(309, 45);
             this.trbRating.TabIndex = 3;
-            this.trbRating.Value = 1;
             this.trbRating.Scroll += new System.EventHandler(this.trbReview_Scroll);
             // 
             // frmReviewAdd
@@ -246,7 +244,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmReviewAdd";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmReviewAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trbRating)).EndInit();

@@ -205,7 +205,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBookAdd";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmAdd_Load);
             this.ResumeLayout(false);

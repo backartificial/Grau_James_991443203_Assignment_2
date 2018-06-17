@@ -15,7 +15,7 @@ using System.Windows.Forms;
 // Declare class namespace
 namespace Grau_James_991443203_Assignment_2 {
     // Declare the form class
-    public partial class frmAdd : Form {
+    public partial class frmBookAdd : Form {
         // Create needed class variables
         private frmBooks booksForm;
 
@@ -26,7 +26,7 @@ namespace Grau_James_991443203_Assignment_2 {
          * @param frmBooks: is the form that holds needed objects
          * 
          **/
-        public frmAdd(frmBooks booksForm) {
+        public frmBookAdd(frmBooks booksForm) {
             // Initialize the Form
             InitializeComponent();
 

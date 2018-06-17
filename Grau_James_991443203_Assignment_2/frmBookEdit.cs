@@ -15,7 +15,7 @@ using System.Windows.Forms;
 // Declare Namespace 
 namespace Grau_James_991443203_Assignment_2 {
     // Class to handle frmEdit
-    public partial class frmEdit : Form {
+    public partial class frmBookEdit : Form {
         // Create needed class variables
         private Book editBook;
         private frmBooks booksForm;
@@ -28,7 +28,7 @@ namespace Grau_James_991443203_Assignment_2 {
          * @param booksFrom: is the books form that hold some needed objects for data handling
          * 
          **/
-        public frmEdit(Book editBook, frmBooks booksForm) {
+        public frmBookEdit(Book editBook, frmBooks booksForm) {
             // Initialize the form
             InitializeComponent();
 

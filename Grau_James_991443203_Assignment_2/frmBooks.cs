@@ -28,10 +28,13 @@ namespace Grau_James_991443203_Assignment_2 {
 
         /**
          * 
-         * This methos is used to initialize items of the form on load
+         * This method is used to initialize items of the form on load
          * 
          **/
         private void frmBooks_Load(object sender, EventArgs e) {
+            // Dynamically set the form title
+            Text = "Books | " + Properties.Settings.Default.ApplicationName;
+
             // Load megaBooksDatSet into the booksTableAdapter
             booksTableAdapter.Fill(megaBooksDBDataSet.Books);
         }     
@@ -53,7 +56,18 @@ namespace Grau_James_991443203_Assignment_2 {
                     using (SqlCommand command = new SqlCommand("DELETE FROM books WHERE id = @id", conn)) {
                         // Append the parameter to the query string and execute the query
                         command.Parameters.AddWithValue("@id", dgvBooks.CurrentRow.Cells[0].Value);
-                        command.ExecuteNonQuery();
+
+                        // Check to make sure that the delete went through
+                        if(command.ExecuteNonQuery() == 0) {
+                            // Display an error message
+                            MessageBox.Show("Oops... Something happened and the selected book (" + dgvBooks.CurrentRow.Cells[1].Value + ") cannot be deleted.  Please try again.", "Deleteing Book Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            // Display error also in the status strip
+                            tsslStatusLabel.Text = "Deleteing Book (" + dgvBooks.CurrentRow.Cells[1].Value + ") Failed.";
+
+                            // Return to not process any more of the method
+                            return;
+                        }
 
                         // Delete row from dataset
                         megaBooksDBDataSet.Books.Rows.RemoveAt(dgvBooks.CurrentCell.RowIndex);
@@ -71,14 +85,14 @@ namespace Grau_James_991443203_Assignment_2 {
          * 
          **/ 
         private void tsbEdit_Click(object sender, EventArgs e) {
-            // Select the curret row and store it into a general variable
-            var selectedBook = dgvBooks.CurrentRow;
+            // Select the curret row and store it into a variable
+            DataGridViewRow selectedBook = dgvBooks.CurrentRow;
             
             // Based on the selected row, create a new Book instance
             Book editBook = new Book(int.Parse(selectedBook.Cells[0].Value.ToString()), selectedBook.Cells[1].Value.ToString(), selectedBook.Cells[2].Value.ToString(), DateTime.Parse(selectedBook.Cells[3].Value.ToString()), selectedBook.Cells[4].Value.ToString());
 
             // Display the edit form and pass in the desires book to edit and this form
-            new frmEdit(editBook, this).Show();
+            new frmBookEdit(editBook, this).Show();
         }
 
         /**
@@ -88,7 +102,7 @@ namespace Grau_James_991443203_Assignment_2 {
          **/
         private void bngAdd_Click(object sender, EventArgs e) {
             // Display the add form and pass in this form
-            new frmAdd(this).Show();
+            new frmBookAdd(this).Show();
         }
     }
 }

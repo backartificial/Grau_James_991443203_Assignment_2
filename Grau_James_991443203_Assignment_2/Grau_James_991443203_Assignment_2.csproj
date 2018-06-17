@@ -74,17 +74,23 @@
     <Compile Include="frmAdd.Designer.cs">
       <DependentUpon>frmAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddReview.Designer.cs">
+      <DependentUpon>frmAddReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBooks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBooks.Designer.cs">
       <DependentUpon>frmBooks.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEdit.cs">
+    <Compile Include="frmBookEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEdit.Designer.cs">
-      <DependentUpon>frmEdit.cs</DependentUpon>
+    <Compile Include="frmBookEdit.Designer.cs">
+      <DependentUpon>frmBookEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="MegaBooksDBDataSet.cs">
       <DependentUpon>MegaBooksDBDataSet.xsd</DependentUpon>
@@ -102,8 +108,8 @@
     <EmbeddedResource Include="frmBooks.resx">
       <DependentUpon>frmBooks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEdit.resx">
-      <DependentUpon>frmEdit.cs</DependentUpon>
+    <EmbeddedResource Include="frmBookEdit.resx">
+      <DependentUpon>frmBookEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

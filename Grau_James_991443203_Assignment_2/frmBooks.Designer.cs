@@ -25,15 +25,14 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBooks));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.megaBooksDBDataSet = new Grau_James_991443203_Assignment_2.MegaBooksDBDataSet();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter = new Grau_James_991443203_Assignment_2.MegaBooksDBDataSetTableAdapters.BooksTableAdapter();
             this.tableAdapterManager = new Grau_James_991443203_Assignment_2.MegaBooksDBDataSetTableAdapters.TableAdapterManager();
             this.booksBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bngAdd = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -43,16 +42,17 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bngAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bngBookDelete = new System.Windows.Forms.ToolStripButton();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
-            this.stsBooksStatus = new System.Windows.Forms.StatusStrip();
-            this.tsslStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stsBooksStatus = new System.Windows.Forms.StatusStrip();
+            this.tsslStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.megaBooksDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingNavigator)).BeginInit();
@@ -89,6 +89,7 @@
             this.booksBindingNavigator.BindingSource = this.booksBindingSource;
             this.booksBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.booksBindingNavigator.DeleteItem = null;
+            this.booksBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.booksBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -101,7 +102,7 @@
             this.bindingNavigatorSeparator2,
             this.bngAdd,
             this.tsbEdit,
-            this.bindingNavigatorDeleteItem});
+            this.bngBookDelete});
             this.booksBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.booksBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.booksBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -109,19 +110,10 @@
             this.booksBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.booksBindingNavigator.Name = "booksBindingNavigator";
             this.booksBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.booksBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.booksBindingNavigator.Size = new System.Drawing.Size(800, 25);
             this.booksBindingNavigator.TabIndex = 0;
             this.booksBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bngAdd
-            // 
-            this.bngAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bngAdd.Image = ((System.Drawing.Image)(resources.GetObject("bngAdd.Image")));
-            this.bngAdd.Name = "bngAdd";
-            this.bngAdd.RightToLeftAutoMirrorImage = true;
-            this.bngAdd.Size = new System.Drawing.Size(23, 22);
-            this.bngAdd.Text = "Add new";
-            this.bngAdd.Click += new System.EventHandler(this.bngAdd_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -190,6 +182,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bngAdd
+            // 
+            this.bngAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bngAdd.Image = ((System.Drawing.Image)(resources.GetObject("bngAdd.Image")));
+            this.bngAdd.Name = "bngAdd";
+            this.bngAdd.RightToLeftAutoMirrorImage = true;
+            this.bngAdd.Size = new System.Drawing.Size(23, 22);
+            this.bngAdd.Text = "Add new";
+            this.bngAdd.Click += new System.EventHandler(this.bngAdd_Click);
+            // 
             // tsbEdit
             // 
             this.tsbEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -200,15 +202,15 @@
             this.tsbEdit.Text = "toolStripButton1";
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
-            // bindingNavigatorDeleteItem
+            // bngBookDelete
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.bngBookDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bngBookDelete.Image = ((System.Drawing.Image)(resources.GetObject("bngBookDelete.Image")));
+            this.bngBookDelete.Name = "bngBookDelete";
+            this.bngBookDelete.RightToLeftAutoMirrorImage = true;
+            this.bngBookDelete.Size = new System.Drawing.Size(23, 22);
+            this.bngBookDelete.Text = "Delete";
+            this.bngBookDelete.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // dgvBooks
             // 
@@ -218,14 +220,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBooks.AutoGenerateColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -239,22 +241,6 @@
             this.dgvBooks.ReadOnly = true;
             this.dgvBooks.Size = new System.Drawing.Size(800, 397);
             this.dgvBooks.TabIndex = 1;
-            // 
-            // stsBooksStatus
-            // 
-            this.stsBooksStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslStatusLabel});
-            this.stsBooksStatus.Location = new System.Drawing.Point(0, 428);
-            this.stsBooksStatus.Name = "stsBooksStatus";
-            this.stsBooksStatus.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.stsBooksStatus.Size = new System.Drawing.Size(800, 22);
-            this.stsBooksStatus.TabIndex = 2;
-            this.stsBooksStatus.Text = "statusStrip1";
-            // 
-            // tsslStatusLabel
-            // 
-            this.tsslStatusLabel.Name = "tsslStatusLabel";
-            this.tsslStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -292,9 +278,9 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "date";
-            dataGridViewCellStyle5.Format = "D";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "D";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "Book Date";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -305,15 +291,31 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "isbn";
-            dataGridViewCellStyle6.Format = "000-00-0-000000-0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "000-00-0-000000-0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn5.HeaderText = "ISBN";
             this.dataGridViewTextBoxColumn5.MaxInputLength = 17;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.ToolTipText = "Is the ISBN Number of the Book";
             this.dataGridViewTextBoxColumn5.Width = 61;
+            // 
+            // stsBooksStatus
+            // 
+            this.stsBooksStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslStatusLabel});
+            this.stsBooksStatus.Location = new System.Drawing.Point(0, 428);
+            this.stsBooksStatus.Name = "stsBooksStatus";
+            this.stsBooksStatus.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.stsBooksStatus.Size = new System.Drawing.Size(800, 22);
+            this.stsBooksStatus.TabIndex = 2;
+            this.stsBooksStatus.Text = "statusStrip1";
+            // 
+            // tsslStatusLabel
+            // 
+            this.tsslStatusLabel.Name = "tsslStatusLabel";
+            this.tsslStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // frmBooks
             // 
@@ -326,7 +328,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trafalgar Book Club";
             this.Load += new System.EventHandler(this.frmBooks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.megaBooksDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
@@ -347,7 +348,7 @@
         private System.Windows.Forms.BindingNavigator booksBindingNavigator;
         private System.Windows.Forms.ToolStripButton bngAdd;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bngBookDelete;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;

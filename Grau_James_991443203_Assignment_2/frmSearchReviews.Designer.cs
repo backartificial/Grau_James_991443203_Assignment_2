@@ -59,6 +59,7 @@
             this.dgvReviews.ReadOnly = true;
             this.dgvReviews.Size = new System.Drawing.Size(847, 335);
             this.dgvReviews.TabIndex = 0;
+            this.dgvReviews.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvReviews_CellMouseDoubleClick);
             // 
             // grbSearch
             // 

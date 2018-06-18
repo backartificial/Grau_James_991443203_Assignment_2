@@ -259,5 +259,48 @@ namespace Grau_James_991443203_Assignment_2 {
             // Set the Datagrid back to unfiltered
             dgvReviews.DataSource = dtReviews;
         }
+
+        /**
+         * 
+         * This method is used to display the form that displays the review in full
+         * 
+         **/
+        private void dgvReviews_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
+            // Select the curret row and store it into a variable
+            DataGridViewRow selectedReview = dgvReviews.CurrentRow;
+
+            // Create a Review book instance
+            Book reviewBook = null;
+
+            // Try and open a connection to the database
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.MegaBooksDBConnectionString)) {
+                // Open the connection to the database
+                conn.Open();
+
+                // Perform the retrival of a book from the DB
+                using (SqlCommand command = new SqlCommand("SELECT * FROM books WHERE id = @id", conn)) {
+                    // Append the values to be updated to the query string
+                    command.Parameters.AddWithValue("@id", int.Parse(selectedReview.Cells[1].Value.ToString()));
+
+                    // Try using the SqlDataReader to read the books
+                    using (SqlDataReader reader = command.ExecuteReader()) {
+                        // Check to make sure that the data can be read
+                        if (reader.Read()) {
+                            // Create the reviewBook instance
+                            reviewBook = new Book(int.Parse(reader["id"].ToString()), reader["name"].ToString(), reader["author"].ToString(), DateTime.Parse(reader["date"].ToString()), reader["isbn"].ToString());
+                        }
+                    }
+
+                    // Close the connection to the database
+                    conn.Close();
+                }
+            }
+
+            // Based on the selected row, create a new Review instance
+            Review editReview = new Review(int.Parse(selectedReview.Cells[0].Value.ToString()), selectedReview.Cells[3].Value.ToString(), selectedReview.Cells[4].Value.ToString(), DateTime.Parse(selectedReview.Cells[5].Value.ToString()), int.Parse(selectedReview.Cells[6].Value.ToString()), reviewBook);
+
+            // Display the full view form and pass in the desires review to view and this form
+            new frmSearchReviewsView(editReview, this).Show();
+        }
     }
 }

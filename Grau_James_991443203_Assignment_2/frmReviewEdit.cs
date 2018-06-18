@@ -24,6 +24,9 @@ namespace Grau_James_991443203_Assignment_2 {
          * 
          * This method is used to initialize frmReviewEdit form
          * 
+         * @param editReview: is the review being edited
+         * @param reviewsForm: is the reviews form that is needed for some controls
+         * 
          **/
         public frmReviewEdit(Review editReview, frmReviews reviewsForm) {
             // Initialize the form component

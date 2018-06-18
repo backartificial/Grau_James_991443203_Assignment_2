@@ -23,7 +23,7 @@ namespace Grau_James_991443203_Assignment_2 {
             // Initialize and then display the application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSearchReviews());
+            Application.Run(new frmMain());
         }
     }
 }

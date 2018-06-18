@@ -104,6 +104,12 @@
     <Compile Include="frmReviews.Designer.cs">
       <DependentUpon>frmReviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSearchReviews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchReviews.Designer.cs">
+      <DependentUpon>frmSearchReviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="MegaBooksDBDataSet.cs">
       <DependentUpon>MegaBooksDBDataSet.xsd</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReviews.resx">
       <DependentUpon>frmReviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchReviews.resx">
+      <DependentUpon>frmSearchReviews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
